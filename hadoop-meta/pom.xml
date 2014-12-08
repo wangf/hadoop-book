@@ -32,7 +32,8 @@ A module which allows the Hadoop dependencies to be specified by a Maven profile
       <id>apache-1</id>
       <activation>
         <property>
-          <name>!hadoop.distro</name>
+          <name>hadoop.distro</name>
+          <value>apache-1</value>
         </property>
       </activation>
       <properties>
