@@ -20,8 +20,7 @@ public class MaxTemperatureMapper extends Mapper<LongWritable, Text, Text, IntWr
 	private IntWritable temp = new IntWritable();/* ] */
 
 	@Override
-	public void map(LongWritable key, Text value, Context context) throws IOException,
-			InterruptedException {
+	public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
 
 		parser.parse(value);
 		if (parser.isValidTemperature()) {

@@ -18,9 +18,8 @@ public class MaxTemperatureMapperTest {
 		// Year ^^^^
 				"99999V0203201N00261220001CN9999999N9-00111+99999999999");
 		// Temperature ^^^^^
-		new MapDriver<LongWritable, Text, Text, IntWritable>()
-				.withMapper(new MaxTemperatureMapper()).withInputValue(value)
-				.withOutput(new Text("1950"), new IntWritable(-11)).runTest();
+		new MapDriver<LongWritable, Text, Text, IntWritable>().withMapper(new MaxTemperatureMapper())
+				.withInputValue(value).withOutput(new Text("1950"), new IntWritable(-11)).runTest();
 	}
 
 	@Test
@@ -29,8 +28,8 @@ public class MaxTemperatureMapperTest {
 		// Year ^^^^
 				"99999V0203201N00261220001CN9999999N9+99991+99999999999");
 		// Temperature ^^^^^
-		new MapDriver<LongWritable, Text, Text, IntWritable>()
-				.withMapper(new MaxTemperatureMapper()).withInputValue(value).runTest();
+		new MapDriver<LongWritable, Text, Text, IntWritable>().withMapper(new MaxTemperatureMapper())
+				.withInputValue(value).runTest();
 	}
 
 	// vv MaxTemperatureMapperTestV5Malformed
@@ -41,9 +40,8 @@ public class MaxTemperatureMapperTest {
 				"RJSN V02011359003150070356999999433201957010100005+353");
 		// Temperature ^^^^^
 		Counters counters = new Counters();
-		new MapDriver<LongWritable, Text, Text, IntWritable>()
-				.withMapper(new MaxTemperatureMapper()).withInputValue(value)
-				.withCounters(counters).runTest();
+		new MapDriver<LongWritable, Text, Text, IntWritable>().withMapper(new MaxTemperatureMapper())
+				.withInputValue(value).withCounters(counters).runTest();
 		Counter c = counters.findCounter(MaxTemperatureMapper.Temperature.MALFORMED);
 		assertThat(c.getValue(), is(1L));
 	}

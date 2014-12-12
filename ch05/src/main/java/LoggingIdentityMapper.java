@@ -7,14 +7,12 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.hadoop.mapreduce.Mapper;
 
-public class LoggingIdentityMapper<KEYIN, VALUEIN, KEYOUT, VALUEOUT>
-		extends Mapper<KEYIN, VALUEIN, KEYOUT, VALUEOUT> {
+public class LoggingIdentityMapper<KEYIN, VALUEIN, KEYOUT, VALUEOUT> extends Mapper<KEYIN, VALUEIN, KEYOUT, VALUEOUT> {
 
 	private static final Log LOG = LogFactory.getLog(LoggingIdentityMapper.class);
 
 	@Override
-	public void map(KEYIN key, VALUEIN value, Context context) throws IOException,
-			InterruptedException {
+	public void map(KEYIN key, VALUEIN value, Context context) throws IOException, InterruptedException {
 		// Log to stdout file
 		System.out.println("Map key: " + key);
 
