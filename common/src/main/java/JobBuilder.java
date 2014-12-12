@@ -25,7 +25,7 @@ public class JobBuilder {
   public JobBuilder(Class<?> driverClass, int extraArgCount, String extrArgsUsage) throws IOException {
     this.driverClass = driverClass;
     this.extraArgCount = extraArgCount;
-    this.job = new Job();
+    this.job = Job.getInstance();
     this.job.setJarByClass(driverClass);
     this.extrArgsUsage = extrArgsUsage;
   }
