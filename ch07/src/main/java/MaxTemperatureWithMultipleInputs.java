@@ -37,7 +37,7 @@ public class MaxTemperatureWithMultipleInputs extends Configured
       return -1;
     }
     
-    Job job = new Job(getConf(), "Max temperature with multiple input formats");
+    Job job = Job.getInstance(getConf(), "Max temperature with multiple input formats");
     job.setJarByClass(getClass());
     
     Path ncdcInputPath = new Path(args[0]);

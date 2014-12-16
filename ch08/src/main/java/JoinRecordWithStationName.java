@@ -26,7 +26,7 @@ public class JoinRecordWithStationName extends Configured implements Tool {
       return -1;
     }
     
-    Job job = new Job(getConf(), "Join weather records with station names");
+    Job job = Job.getInstance(getConf(), "Join weather records with station names");
     job.setJarByClass(getClass());
     
     Path ncdcInputPath = new Path(args[0]);

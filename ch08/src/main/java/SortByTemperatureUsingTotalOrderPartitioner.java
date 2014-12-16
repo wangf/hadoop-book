@@ -48,8 +48,7 @@ public class SortByTemperatureUsingTotalOrderPartitioner extends Configured
     String partitionFile =TotalOrderPartitioner.getPartitionFile(conf);
     URI partitionUri = new URI(partitionFile + "#" +
         TotalOrderPartitioner.DEFAULT_PATH);
-    DistributedCache.addCacheFile(partitionUri, conf);
-    DistributedCache.createSymlink(conf);
+    job.addCacheFile(partitionUri);
 
     return job.waitForCompletion(true) ? 0 : 1;
   }

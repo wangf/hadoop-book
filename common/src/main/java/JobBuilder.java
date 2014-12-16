@@ -38,7 +38,7 @@ public class JobBuilder {
       printUsage(tool, "<input> <output>");
       return null;
     }
-    Job job = new Job(conf);
+    Job job =Job.getInstance(conf);
     job.setJarByClass(tool.getClass());
     FileInputFormat.addInputPath(job, new Path(args[0]));
     FileOutputFormat.setOutputPath(job, new Path(args[1]));

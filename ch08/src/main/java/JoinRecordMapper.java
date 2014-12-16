@@ -14,6 +14,7 @@ public class JoinRecordMapper
   protected void map(LongWritable key, Text value, Context context)
       throws IOException, InterruptedException {
     parser.parse(value);
+    if(value == null) return;
     context.write(new TextPair(parser.getStationId(), "1"), value);
   }
 

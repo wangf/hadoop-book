@@ -19,7 +19,7 @@ public class MinimalMapReduce extends Configured implements Tool {
       return -1;
     }
     
-    Job job = new Job(getConf());
+    Job job =Job.getInstance(getConf());
     job.setJarByClass(getClass());
     FileInputFormat.addInputPath(job, new Path(args[0]));
     FileOutputFormat.setOutputPath(job, new Path(args[1]));
