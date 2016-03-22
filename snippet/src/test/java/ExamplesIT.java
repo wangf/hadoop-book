@@ -52,7 +52,7 @@ public class ExamplesIT {
 
   private static final File PROJECT_BASE_DIR =
     new File(System.getProperty("hadoop.book.basedir",
-        "/Users/tom/book-workspace/hadoop-book"));
+        "/home/feng/github/hadoop-book"));
   
   private static final String MODE_PROPERTY = "example.mode";
   private static final String MODE_DEFAULT = "local";
